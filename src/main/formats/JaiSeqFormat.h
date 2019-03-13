@@ -1,3 +1,6 @@
+// This code from https://github.com/magcius/vgmtrans
+
+
 #pragma once
 #include "Format.h"
 #include "Root.h"

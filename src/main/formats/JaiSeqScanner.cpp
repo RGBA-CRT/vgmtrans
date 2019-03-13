@@ -1,3 +1,5 @@
+// This code from https://github.com/magcius/vgmtrans
+
 
 #include "pch.h"
 #include "common.h"
