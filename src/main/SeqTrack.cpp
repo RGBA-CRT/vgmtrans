@@ -330,6 +330,15 @@ void SeqTrack::AddUnknown(uint32_t offset,
   }
 }
 
+void SeqTrack::AddComment(const std::wstring &sComment) {
+  wstring miditext(sComment);
+
+  if (readMode == READMODE_CONVERT_TO_MIDI) {
+    pMidiTrack->AddText(miditext.c_str());
+  }
+
+}
+
 void SeqTrack::AddSetOctave(uint32_t offset, uint32_t length, uint8_t newOctave, const std::wstring &sEventName) {
   OnEvent(offset, length);
 
@@ -1134,6 +1143,10 @@ void SeqTrack::AddProgramChange(uint32_t offset,
       AddEvent(new ProgChangeSeqEvent(this, progNum, offset, length, sEventName));
     }
     parentSeq->AddInstrumentRef(progNum);
+  }
+  if (progNum > 127) {
+    wstring pcMessage = L"OverPC:" + std::to_wstring((unsigned int)progNum);
+    AddComment(pcMessage.c_str());
   }
   AddProgramChangeNoItem(progNum, requireBank);
 }

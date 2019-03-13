@@ -816,6 +816,9 @@
     <ClCompile Include="src\main\formats\KonamiPS1Seq.cpp">
       <Filter>Source Files\formats\konamips1</Filter>
     </ClCompile>
+    <ClCompile Include="src\main\formats\JaiSeqScanner.cpp">
+      <Filter>Source Files\formats</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ui\windows\aboutdlg.h">

@@ -265,6 +265,7 @@
     <ClCompile Include="src\main\formats\HudsonSnesInstr.cpp" />
     <ClCompile Include="src\main\formats\HudsonSnesScanner.cpp" />
     <ClCompile Include="src\main\formats\HudsonSnesSeq.cpp" />
+    <ClCompile Include="src\main\formats\JaiSeqScanner.cpp" />
     <ClCompile Include="src\main\formats\KonamiPS1Scanner.cpp" />
     <ClCompile Include="src\main\formats\KonamiPS1Seq.cpp" />
     <ClCompile Include="src\main\formats\NamcoSnesInstr.cpp" />

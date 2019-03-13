@@ -52,6 +52,8 @@ class SeqTrack:
   void AddHold(uint32_t offset, uint32_t length, const std::wstring &sEventName = L"Hold");
   void AddUnknown(uint32_t offset, uint32_t length, const std::wstring &sEventName = L"Unknown Event", const std::wstring &sEventDesc = L"");
 
+  void AddComment(const std::wstring & sComment);
+
   void AddNoteOn(uint32_t offset, uint32_t length, int8_t key, int8_t vel, const std::wstring &sEventName = L"Note On");
   void AddNoteOnNoItem(int8_t key, int8_t vel);
   void AddPercNoteOn(uint32_t offset, uint32_t length, int8_t key, int8_t vel, const std::wstring &sEventName = L"Percussion Note On");

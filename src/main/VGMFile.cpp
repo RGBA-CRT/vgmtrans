@@ -62,8 +62,12 @@ bool VGMFile::OnSaveAllAsRaw() {
 
 bool VGMFile::LoadVGMFile() {
   bool val = Load();
-  if (!val)
+  if (!val) {
+    pRoot->AddLogItem(new LogItem(wstring(L"Error loading \"" + name + L"\".").c_str(),
+      LOG_LEVEL_ERR,
+      L"VGMFile"));
     return false;
+  }
   Format *fmt = GetFormat();
   if (fmt)
     fmt->OnNewFile(this);
