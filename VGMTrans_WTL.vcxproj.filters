@@ -259,6 +259,9 @@
     <Filter Include="Header Files\formats\konamips1">
       <UniqueIdentifier>{38d11b15-8e84-4ce6-bf22-a9bf11c40fc5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\formats\JaiSeq">
+      <UniqueIdentifier>{33ef4bdb-a115-4f60-b29a-1c38360fd86e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ui\windows\aboutdlg.cpp">
@@ -817,7 +820,7 @@
       <Filter>Source Files\formats\konamips1</Filter>
     </ClCompile>
     <ClCompile Include="src\main\formats\JaiSeqScanner.cpp">
-      <Filter>Source Files\formats</Filter>
+      <Filter>Source Files\formats\JaiSeq</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1480,6 +1483,12 @@
     </ClInclude>
     <ClInclude Include="src\main\formats\KonamiPS1Seq.h">
       <Filter>Header Files\formats\konamips1</Filter>
+    </ClInclude>
+    <ClInclude Include="src\main\formats\JaiSeqScanner.h">
+      <Filter>Source Files\formats\JaiSeq</Filter>
+    </ClInclude>
+    <ClInclude Include="src\main\formats\JaiSeqFormat.h">
+      <Filter>Source Files\formats\JaiSeq</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -133,6 +133,11 @@ void SynthRgn::SetWaveLinkInfo(uint16_t options, uint16_t phaseGroup, uint32_t t
   tableIndex = theTableIndex;
 }
 
+void SynthRgn::EnableUnityKey(bool bEnable)
+{
+  unityKeyEnable = bEnable;
+}
+
 //  ********
 //  SynthArt
 //  ********

@@ -75,7 +75,7 @@ class SynthRgn {
   SynthSampInfo *AddSampInfo(SynthSampInfo wsmp);
   void SetRanges(uint16_t keyLow = 0, uint16_t keyHigh = 0x7F, uint16_t velLow = 0, uint16_t velHigh = 0x7F);
   void SetWaveLinkInfo(uint16_t options, uint16_t phaseGroup, uint32_t theChannel, uint32_t theTableIndex);
-
+  void EnableUnityKey(bool bEnable);
  public:
   uint16_t usKeyLow;
   uint16_t usKeyHigh;
@@ -89,6 +89,8 @@ class SynthRgn {
 
   SynthSampInfo *sampinfo;
   SynthArt *art;
+
+  bool unityKeyEnable;
 };
 
 class SynthArt {

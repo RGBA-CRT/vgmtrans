@@ -795,7 +795,8 @@ bool JaiSeqInstrBNK::LoadInstr() {
         /* Fake ADSR for now. */
         rgn->attack_time = 0.0;
         rgn->release_time = 0.2;
-
+        rgn->SetUnityKey(60); // Temp, C3
+        rgn->unityKeyEnable = true;
         velLow = velHigh + 1;
       }
 
@@ -1101,7 +1102,14 @@ end:
 }
 
 void JaiSeqBMSScanner::Scan(RawFile *file, void *info) {
-  JaiSeqSeq *seq = new JaiSeqSeq(file, 0, 0, file->GetFileName());
+  std::wstring fileName(file->GetFileName());
+
+  // C++‚í‚©‚ñ‚È‚¢
+  if (fileName.find(L'.', 0) != std::wstring::npos) {
+    fileName[fileName.find(L'.', 0)] = L'\0';
+  }
+  
+  JaiSeqSeq *seq = new JaiSeqSeq(file, 0, 0, fileName.c_str());
   seq->Load();
 }
 

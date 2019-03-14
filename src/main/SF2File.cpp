@@ -304,10 +304,12 @@ SF2File::SF2File(SynthFile *synthfile)
       dataPtr += sizeof(sfInstGenList);
 
       // overridingRootKey
-      instGenList.sfGenOper = overridingRootKey;
-      instGenList.genAmount.wAmount = rgn->sampinfo->usUnityNote;
-      memcpy(igenCk->data + dataPtr, &instGenList, sizeof(sfInstGenList));
-      dataPtr += sizeof(sfInstGenList);
+      if (rgn->unityKeyEnable) {
+        instGenList.sfGenOper = overridingRootKey;
+        instGenList.genAmount.wAmount = rgn->sampinfo->usUnityNote;
+        memcpy(igenCk->data + dataPtr, &instGenList, sizeof(sfInstGenList));
+        dataPtr += sizeof(sfInstGenList);
+      }
 
       // attackVolEnv
       instGenList.sfGenOper = attackVolEnv;

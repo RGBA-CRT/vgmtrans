@@ -467,6 +467,7 @@ SynthFile *VGMColl::CreateSynthFile() {
         newRgn->SetRanges(rgn->keyLow, rgn->keyHigh,
                           rgn->velLow, rgn->velHigh);
         newRgn->SetWaveLinkInfo(0, 0, 1, (uint32_t) realSampNum);
+        newRgn->EnableUnityKey(rgn->unityKeyEnable);
 
         if (realSampNum >= finalSamps.size()) {
           wchar_t log[256];

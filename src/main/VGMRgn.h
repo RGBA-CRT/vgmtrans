@@ -61,6 +61,7 @@ class VGMRgn:
   uint8_t velHigh;
 
   uint8_t unityKey;
+  bool unityKeyEnable;
   short fineTune;
 
   Loop loop;
