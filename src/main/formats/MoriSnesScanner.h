@@ -20,4 +20,5 @@ class MoriSnesScanner:
  private:
   static BytePattern ptnLoadSeq;
   static BytePattern ptnSetDIR;
+  static const int maxSongCount = 16;
 };

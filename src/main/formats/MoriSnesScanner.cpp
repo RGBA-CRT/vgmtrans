@@ -65,13 +65,7 @@ void MoriSnesScanner::SearchForMoriSnesFromARAM(RawFile *file) {
   version = MORISNES_STANDARD;
 
   // Example: Shien The Blade Chaser (Shien's Revenge)
-
-  // TODO: guess song index
-  int8_t guessedSongIndex = -1;
-  if (addrSongList + 2 <= 0x10000) {
-    guessedSongIndex = 1;
-  }
-
+  
   // scan DIR address
   uint32_t ofsSetDIR;
   uint16_t spcDirAddr = 0;
@@ -79,24 +73,39 @@ void MoriSnesScanner::SearchForMoriSnesFromARAM(RawFile *file) {
     spcDirAddr = file->GetByte(ofsSetDIR + 1) << 8;
   }
 
-  uint32_t addrSongHeaderPtr = addrSongList + guessedSongIndex * 2;
-  if (addrSongHeaderPtr + 2 <= 0x10000) {
-    uint16_t addrSongHeader = file->GetShort(addrSongHeaderPtr);
+  // TODO: guess song index
+  if (addrSongList + 2 > 0x10000)
+    return;
 
-    MoriSnesSeq *newSeq = new MoriSnesSeq(file, version, addrSongHeader, name);
+  for (int8_t songIndex = 1; songIndex <= maxSongCount; songIndex++) {
+    if (songIndex > maxSongCount) break;
+
+    uint32_t addrSongHeaderPtr = addrSongList + songIndex * 2;
+    if (addrSongHeaderPtr + 2 >= 0x10000) break;
+    
+    uint16_t addrSongHeader = file->GetShort(addrSongHeaderPtr);
+    //if (addrSongHeader == 0xffff || addrSongHeader == 0x0000)
+//      break;
+
+    MoriSnesSeq* newSeq = new MoriSnesSeq(file, version, addrSongHeader, name + L"[" + std::to_wstring(songIndex) + L"]");
     if (!newSeq->LoadVGMFile()) {
       delete newSeq;
-      return;
+      newSeq = NULL;
+      continue;
     }
 
     if (spcDirAddr != 0) {
-      MoriSnesInstrSet *newInstrSet =
-          new MoriSnesInstrSet(file, version, spcDirAddr, newSeq->InstrumentAddresses, newSeq->InstrumentHints);
+      MoriSnesInstrSet* newInstrSet =
+        new MoriSnesInstrSet(file, version, spcDirAddr, newSeq->InstrumentAddresses, newSeq->InstrumentHints);
+
       if (!newInstrSet->LoadVGMFile()) {
         delete newInstrSet;
-        return;
+        newInstrSet = NULL;
+
+        continue;
       }
     }
+    
   }
 }
 
