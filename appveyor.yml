@@ -9,6 +9,10 @@ environment:
     target: Release
     visualstudio_string: vs2019
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+  - platform: x64
+    target: Release
+    visualstudio_string: vs2019
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
 
 matrix:
   fast_finish: true
@@ -16,6 +20,9 @@ matrix:
 init:
 # Use CRLF line endings on Windows so users can just use Notepad.
   - git config --global core.autocrlf true
+
+install:
+  - git submodule update --init --recursive
 
 build_script:
   - msbuild buildbot.xml /m /t:%target% /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
