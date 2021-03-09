@@ -68,16 +68,17 @@ void WinVGMRoot::Play(void) {
 
     void* rawSF2 = const_cast<void*>(sf2->SaveToMem());
 
-    musicplayer.getAvailableDrivers();
-    musicplayer.loadDataAndPlay(
+    bool res = musicplayer.loadDataAndPlay(
         gsl::make_span(static_cast<char*>(rawSF2), sf2->GetSize()),
         gsl::make_span(reinterpret_cast<char*>(midiBuf.data()), midiBuf.size()));
+
+    if (res) {
+      loadedColl = selectedColl;
+    }
 
     delete[] rawSF2;
     delete sf2;
     delete midi;
-
-    loadedColl = selectedColl;
   } else {
     musicplayer.seek(0);
     if (!musicplayer.playing()) {
