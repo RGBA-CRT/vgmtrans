@@ -85,13 +85,13 @@
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x86;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(ProjectDir)src\ui\windows;$(IncludePath)</IncludePath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x64;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x64;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
     <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir);$(ProjectDir)lib\dxAug07\lib\x86;$(ProjectDir)lib\tinyxml\lib\win32;$(LibraryPath)</LibraryPath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir);$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x64;$(ProjectDir)lib\dxAug07\lib\x64;$(ProjectDir)lib\tinyxml\lib\x64;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir);$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x64;$(ProjectDir)lib\tinyxml\lib\x64;$(LibraryPath)</LibraryPath>
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x86;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x64;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x64;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
     <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir);$(ProjectDir)lib\dxAug07\lib\x86;$(ProjectDir)lib\tinyxml\lib\win32;$(LibraryPath)</LibraryPath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir);$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x64;$(ProjectDir)lib\dxAug07\lib\x64;$(ProjectDir)lib\tinyxml\lib\x64;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir);$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x64;$(ProjectDir)lib\tinyxml\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
@@ -122,7 +122,7 @@
     </ClCompile>
     <ResourceCompile />
     <Link>
-      <AdditionalDependencies>VGMTransCommon.lib;libfluidsynthd.lib;zlib.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mtd.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>VGMTransCommon.lib;zlib.lib;tinyxmlSTL-mtd.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <DataExecutionPrevention>
@@ -153,7 +153,7 @@
     </ClCompile>
     <ResourceCompile />
     <Link>
-      <AdditionalDependencies>VGMTransCommon.lib;libfluidsynthd.lib;zlib.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mtd.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>VGMTransCommon.lib;zlib.lib;tinyxmlSTL-mtd.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <DataExecutionPrevention>
@@ -187,7 +187,7 @@
     </ClCompile>
     <ResourceCompile />
     <Link>
-      <AdditionalDependencies>VGMTransCommon.lib;libfluidsynth.lib;zlib.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mt.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>VGMTransCommon.lib;zlib.lib;tinyxmlSTL-mt.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -223,7 +223,7 @@
     </ClCompile>
     <ResourceCompile />
     <Link>
-      <AdditionalDependencies>VGMTransCommon.lib;libfluidsynth.lib;zlib.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mt.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>VGMTransCommon.lib;zlib.lib;tinyxmlSTL-mt.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -235,7 +235,6 @@
     <Manifest />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lib\dxAug07\dxerr\dxerr.cpp" />
     <ClCompile Include="src\main\BytePattern.cpp" />
     <ClCompile Include="src\main\datetime.cpp" />
     <ClCompile Include="src\main\formats\AkaoSnesInstr.cpp" />
@@ -319,7 +318,6 @@
     <ClCompile Include="src\ui\windows\ItemTreeView.cpp" />
     <ClCompile Include="src\ui\windows\LogListView.cpp" />
     <ClCompile Include="src\ui\windows\mainfrm.cpp" />
-    <ClCompile Include="src\ui\windows\MyCoCreateInstance.cpp" />
     <ClCompile Include="src\ui\windows\osdepend.cpp" />
     <ClCompile Include="src\ui\windows\RawFileListView.cpp" />
     <ClCompile Include="src\ui\windows\RawFileTreeView.cpp" />
@@ -334,27 +332,6 @@
     <ClCompile Include="src\ui\windows\VGMFileListView.cpp" />
     <ClCompile Include="src\ui\windows\VGMTrans.cpp" />
     <ClCompile Include="src\ui\windows\WinVGMRoot.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\C3DBuffer.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\C3DListener.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\C3DSegment.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CAPathPerformance.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CAudioPath.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CCollection.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CDirectMusic.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CDLSLoader.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CDMusicException.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CInputPort.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CInstrument.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CMasterClock.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CMidiPort.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\COutputPort.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CPerformance.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CPortPerformance.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CSampleInstrument.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CSegment.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\Dmhelp.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\DSUTIL\DSUTIL.CPP" />
-    <ClCompile Include="src\ui\windows\directmidi\DSUTIL\DXUTIL.CPP" />
     <ClCompile Include="src\main\loaders\MAMELoader.cpp" />
     <ClCompile Include="src\main\loaders\PSF1Loader.cpp" />
     <ClCompile Include="src\main\loaders\PSF2Loader.cpp" />
@@ -535,7 +512,6 @@
     <ClInclude Include="src\ui\windows\ItemTreeView.h" />
     <ClInclude Include="src\ui\windows\LogListView.h" />
     <ClInclude Include="src\ui\windows\mainfrm.h" />
-    <ClInclude Include="src\ui\windows\MyCoCreateInstance.h" />
     <ClInclude Include="src\ui\windows\MySplitter.h" />
     <ClInclude Include="src\ui\windows\RawFileListView.h" />
     <ClInclude Include="src\ui\windows\RawFileTreeView.h" />
@@ -556,12 +532,6 @@
     <ClInclude Include="src\ui\windows\include\TabbedDockingWindow.h" />
     <ClInclude Include="src\ui\windows\include\TabbedFrame.h" />
     <ClInclude Include="src\ui\windows\include\TabbedMDI.h" />
-    <ClInclude Include="src\ui\windows\directmidi\CAudioPart.h" />
-    <ClInclude Include="src\ui\windows\directmidi\CDirectBase.h" />
-    <ClInclude Include="src\ui\windows\directmidi\CDirectMidi.h" />
-    <ClInclude Include="src\ui\windows\directmidi\CMidipart.h" />
-    <ClInclude Include="src\ui\windows\directmidi\DSUTIL\DSUTIL.H" />
-    <ClInclude Include="src\ui\windows\directmidi\DSUTIL\DXUTIL.H" />
     <ClInclude Include="src\main\formats\PSXSPU.h" />
     <ClInclude Include="src\main\formats\FFTSeq.h" />
     <ClInclude Include="src\main\formats\FFTFormat.h" />

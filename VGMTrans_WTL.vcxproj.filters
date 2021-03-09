@@ -8,12 +8,6 @@
     <Filter Include="Source Files\windows">
       <UniqueIdentifier>{ec4d343c-d1fb-4768-bff6-f44c5153f924}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\windows\DirectMidi">
-      <UniqueIdentifier>{480981dc-e839-4822-b88f-5839ecce7922}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\windows\DirectMidi\DSUtil">
-      <UniqueIdentifier>{b37a9ab6-ebd5-477e-9900-573214d83b51}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\loaders">
       <UniqueIdentifier>{1b674e82-abf9-481f-80e8-f69aa45a2030}</UniqueIdentifier>
     </Filter>
@@ -74,12 +68,6 @@
     </Filter>
     <Filter Include="Header Files\windows\DotNetTabsStuff">
       <UniqueIdentifier>{49ff3bdc-78fd-4cd1-9b42-c976848362b0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\windows\DirectMidi">
-      <UniqueIdentifier>{84d11875-af10-4df8-94d6-b81b4825e85f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\windows\DirectMidi\DSUtil">
-      <UniqueIdentifier>{78ba9aa8-5861-458d-bcca-608dd62477ca}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\formats">
       <UniqueIdentifier>{39dcaba5-0e2b-45f5-913b-53fd1101be55}</UniqueIdentifier>
@@ -244,9 +232,6 @@
     <Filter Include="Source Files\formats\tamsoftps1">
       <UniqueIdentifier>{1dad0218-02e2-4f15-b96d-241c77091932}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\windows\DxErr">
-      <UniqueIdentifier>{f60aad48-6a14-4c0d-a400-60b77e9a16af}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\formats\falcomsnes">
       <UniqueIdentifier>{1d0be765-4a5d-42e0-98ec-1dc4722042a4}</UniqueIdentifier>
     </Filter>
@@ -281,69 +266,6 @@
     </ClCompile>
     <ClCompile Include="src\ui\windows\VGMTrans.cpp">
       <Filter>Source Files\windows</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\C3DBuffer.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\C3DListener.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\C3DSegment.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\CAPathPerformance.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\CAudioPath.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\CCollection.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\CDirectMusic.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\CDLSLoader.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\CDMusicException.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\CInputPort.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\CInstrument.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\CMasterClock.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\CMidiPort.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\COutputPort.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\CPerformance.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\CPortPerformance.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\CSampleInstrument.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\CSegment.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\Dmhelp.cpp">
-      <Filter>Source Files\windows\DirectMidi</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\DSUTIL\DSUTIL.CPP">
-      <Filter>Source Files\windows\DirectMidi\DSUtil</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\directmidi\DSUTIL\DXUTIL.CPP">
-      <Filter>Source Files\windows\DirectMidi\DSUtil</Filter>
     </ClCompile>
     <ClCompile Include="src\main\loaders\MAMELoader.cpp">
       <Filter>Source Files\loaders</Filter>
@@ -576,12 +498,6 @@
     <ClCompile Include="src\ui\windows\ItemTreeView.cpp">
       <Filter>Source Files\windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\ui\windows\MediaThread.cpp">
-      <Filter>Source Files\windows</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\MusicPlayer.cpp">
-      <Filter>Source Files\windows</Filter>
-    </ClCompile>
     <ClCompile Include="src\ui\windows\osdepend.cpp">
       <Filter>Source Files\windows</Filter>
     </ClCompile>
@@ -614,9 +530,6 @@
     </ClCompile>
     <ClCompile Include="src\main\loaders\NCSFLoader.cpp">
       <Filter>Source Files\loaders</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\windows\MyCoCreateInstance.cpp">
-      <Filter>Source Files\windows</Filter>
     </ClCompile>
     <ClCompile Include="src\main\formats\SNESDSP.cpp">
       <Filter>Source Files\formats</Filter>
@@ -798,9 +711,6 @@
     <ClCompile Include="src\main\SeqSlider.cpp">
       <Filter>Source Files\main</Filter>
     </ClCompile>
-    <ClCompile Include="lib\dxAug07\dxerr\dxerr.cpp">
-      <Filter>Source Files\windows\DxErr</Filter>
-    </ClCompile>
     <ClCompile Include="src\main\formats\FalcomSnesInstr.cpp">
       <Filter>Source Files\formats\falcomsnes</Filter>
     </ClCompile>
@@ -871,24 +781,6 @@
     </ClInclude>
     <ClInclude Include="src\ui\windows\include\TabbedMDI.h">
       <Filter>Header Files\windows\DotNetTabsStuff</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ui\windows\directmidi\CAudioPart.h">
-      <Filter>Header Files\windows\DirectMidi</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ui\windows\directmidi\CDirectBase.h">
-      <Filter>Header Files\windows\DirectMidi</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ui\windows\directmidi\CDirectMidi.h">
-      <Filter>Header Files\windows\DirectMidi</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ui\windows\directmidi\CMidipart.h">
-      <Filter>Header Files\windows\DirectMidi</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ui\windows\directmidi\DSUTIL\DSUTIL.H">
-      <Filter>Header Files\windows\DirectMidi\DSUtil</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ui\windows\directmidi\DSUTIL\DXUTIL.H">
-      <Filter>Header Files\windows\DirectMidi\DSUtil</Filter>
     </ClInclude>
     <ClInclude Include="src\main\formats\PSXSPU.h">
       <Filter>Header Files\formats</Filter>
@@ -1175,12 +1067,6 @@
     <ClInclude Include="src\ui\windows\ItemTreeView.h">
       <Filter>Header Files\windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\ui\windows\MediaThread.h">
-      <Filter>Header Files\windows</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ui\windows\MusicPlayer.h">
-      <Filter>Header Files\windows</Filter>
-    </ClInclude>
     <ClInclude Include="src\ui\windows\MySplitter.h">
       <Filter>Header Files\windows</Filter>
     </ClInclude>
@@ -1216,9 +1102,6 @@
     </ClInclude>
     <ClInclude Include="src\main\loaders\NCSFLoader.h">
       <Filter>Header Files\loaders</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ui\windows\MyCoCreateInstance.h">
-      <Filter>Header Files\windows</Filter>
     </ClInclude>
     <ClInclude Include="src\main\formats\SNESDSP.h">
       <Filter>Header Files\formats</Filter>
