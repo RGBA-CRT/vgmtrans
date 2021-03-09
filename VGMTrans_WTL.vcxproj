@@ -84,14 +84,14 @@
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(ProjectDir)src\ui\windows;$(IncludePath)</IncludePath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x86;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(ProjectDir)src\ui\windows;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x64;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
     <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir);$(ProjectDir)lib\dxAug07\lib\x86;$(ProjectDir)lib\tinyxml\lib\win32;$(LibraryPath)</LibraryPath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir);$(ProjectDir)lib\dxAug07\lib\x64;$(ProjectDir)lib\tinyxml\lib\x64;$(LibraryPath)</LibraryPath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir);$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x64;$(ProjectDir)lib\dxAug07\lib\x64;$(ProjectDir)lib\tinyxml\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x86;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x64;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
     <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir);$(ProjectDir)lib\dxAug07\lib\x86;$(ProjectDir)lib\tinyxml\lib\win32;$(LibraryPath)</LibraryPath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir);$(ProjectDir)lib\dxAug07\lib\x64;$(ProjectDir)lib\tinyxml\lib\x64;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir);$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x64;$(ProjectDir)lib\dxAug07\lib\x64;$(ProjectDir)lib\tinyxml\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
@@ -107,7 +107,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./src/common;./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NOMINMAX;_DEBUG;_WINDOWS;UNICODE;STRICT;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -122,7 +122,7 @@
     </ClCompile>
     <ResourceCompile />
     <Link>
-      <AdditionalDependencies>zlib.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mtd.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>VGMTransCommon.lib;libfluidsynthd.lib;zlib.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mtd.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <DataExecutionPrevention>
@@ -139,7 +139,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./src/common;./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NOMINMAX;_DEBUG;_WINDOWS;UNICODE;STRICT;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -153,7 +153,7 @@
     </ClCompile>
     <ResourceCompile />
     <Link>
-      <AdditionalDependencies>zlib.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mtd.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>VGMTransCommon.lib;libfluidsynthd.lib;zlib.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mtd.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <DataExecutionPrevention>
@@ -171,7 +171,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Full</Optimization>
-      <AdditionalIncludeDirectories>./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./src/common;./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NOMINMAX;NDEBUG;_WINDOWS;UNICODE;STRICT;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -187,7 +187,7 @@
     </ClCompile>
     <ResourceCompile />
     <Link>
-      <AdditionalDependencies>zlib.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mt.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>VGMTransCommon.lib;libfluidsynth.lib;zlib.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mt.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -207,7 +207,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Full</Optimization>
-      <AdditionalIncludeDirectories>./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./src/common;./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NOMINMAX;NDEBUG;_WINDOWS;UNICODE;STRICT;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -223,7 +223,7 @@
     </ClCompile>
     <ResourceCompile />
     <Link>
-      <AdditionalDependencies>zlib.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mt.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>VGMTransCommon.lib;libfluidsynth.lib;zlib.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mt.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -319,8 +319,6 @@
     <ClCompile Include="src\ui\windows\ItemTreeView.cpp" />
     <ClCompile Include="src\ui\windows\LogListView.cpp" />
     <ClCompile Include="src\ui\windows\mainfrm.cpp" />
-    <ClCompile Include="src\ui\windows\MediaThread.cpp" />
-    <ClCompile Include="src\ui\windows\MusicPlayer.cpp" />
     <ClCompile Include="src\ui\windows\MyCoCreateInstance.cpp" />
     <ClCompile Include="src\ui\windows\osdepend.cpp" />
     <ClCompile Include="src\ui\windows\RawFileListView.cpp" />
@@ -537,8 +535,6 @@
     <ClInclude Include="src\ui\windows\ItemTreeView.h" />
     <ClInclude Include="src\ui\windows\LogListView.h" />
     <ClInclude Include="src\ui\windows\mainfrm.h" />
-    <ClInclude Include="src\ui\windows\MediaThread.h" />
-    <ClInclude Include="src\ui\windows\MusicPlayer.h" />
     <ClInclude Include="src\ui\windows\MyCoCreateInstance.h" />
     <ClInclude Include="src\ui\windows\MySplitter.h" />
     <ClInclude Include="src\ui\windows\RawFileListView.h" />
