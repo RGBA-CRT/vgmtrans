@@ -1,8 +1,9 @@
+
 VGMTrans - Video Game Music Translator
 ======================================
 | Platform | Status | Build available |
 | :-: | :-: | :-: |
-| Windows (legacy) | [![Build status](https://ci.appveyor.com/api/projects/status/ns62qg09yn5kmf18/branch/master?svg=true)](https://ci.appveyor.com/project/sykhro/vgmtrans-ci/branch/master) | [Yes](https://ci.appveyor.com/project/sykhro/vgmtrans-ci/branch/master/artifacts) |
+| Windows (legacy) | [![Build status](https://ci.appveyor.com/api/projects/status/ns62qg09yn5kmf18/branch/master?svg=true)](https://ci.appveyor.com/project/sykhro/vgmtrans-ci/branch/master) | [Yes](https://ci.appveyor.com/project/sykhro/vgmtrans-ci/branch/master) |
 | FreeBSD | [![Build Status](https://api.cirrus-ci.com/github/vgmtrans/vgmtrans.svg)](https://cirrus-ci.com/github/vgmtrans/vgmtrans) | No |
 | macOS | [![Build status](https://github.com/vgmtrans/vgmtrans/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/vgmtrans/vgmtrans/actions/workflows/build.yml) | [DMG (not signed)](https://github.com/vgmtrans/vgmtrans/actions/workflows/build.yml) |
 | Linux | [![Build status](https://github.com/vgmtrans/vgmtrans/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/vgmtrans/vgmtrans/actions/workflows/build.yml) | [AppImage](https://github.com/vgmtrans/vgmtrans/actions/workflows/build.yml) |
@@ -41,35 +42,49 @@ This software is released under the zlib/libpng License. See LICENSE.txt.
 
 How to use it
 -------------
+To load a file, drag and drop the file into the application window.
+The program will scan any file for contained music files. It knows how to unpack psf,
+psf2 and certain zipped mame rom sets as specified in the mame_roms.xml file,
+though this last feature is fairly undeveloped.
+For example, drag on an NDS rom file and it will detect SDAT files and their contents.
 
-To load a file, drag and drop the file into the application window.  The program will scan any file for contained music files. It knows how to unpack psf, psf2 and certain zipped mame rom sets as specified in the mame_roms.xml file, though this last feature is fairly undeveloped.  For example, drag on an NDS rom file and it will detect SDAT files and their contents.
+Once loaded, double-clicking a file listed under "Detected Music Files" will bring up
+a color-coded hexadecimal display of the file with a break-down of each format element.
+Click the hexadecimal to highlight an element and see more information.
+Right click a detected file to bring up save options.
+To remove files from the "Detected Music Files" or "Scanned Files" list, highlight the files and press the delete key.
 
-Once loaded, double-clicking a file listed under "Detected Music Files" will bring up a color-coded hexadecimal display of the file with a break-down of each format element.  Click the hexadecimal to highlight an element and see more information.  Right click a detected file to bring up save options.  To remove files from the "Detected Music Files" or "Scanned Files" list, highlight the files and press the delete key.
-
-The "Collections" window displays file groupings that the software was able to infer.  A sequence file will be paired with one or more instrument sets and/or sample collections. A collection can be played by highlighting it and pressing the play button or spacebar.
+The "Collections" window displays file groupings that the software was able to infer.
+A sequence file will be paired with one or more instrument sets and/or sample collections.
+A collection can be played by highlighting it and pressing the play button or spacebar.
 
 How to compile it
 -----------------
-
 Please refer to [the wiki](https://github.com/vgmtrans/vgmtrans/wiki) for information on how to compile the two flavors of VGMTrans. 
 
 Contributors
 ------------
-
 - Mike: The original author of the tool, worked on a lot of formats.
 - loveemu: Creator of github project, worked on bugfixes/improvements.
 - Sound Test: 774: Anonymous Japanese guy in 2ch BBS, worked on the HOSA format, analyzing the TriAcePS1 format and such.
+- sykhro: Worked on bugfixes and improvements
 
 ### Special Thanks
-
 - Bregalad: Author of [GBAMusRiper](http://www.romhacking.net/utilities/881/), great reference of MP2k interpretation.
 - Nisto: Author of [kdt-tool](https://github.com/Nisto/kdt-tool), thank you for your approval of porting to VGMTrans.
 - [Gnilda](https://twitter.com/god_gnilda): for his/her dedicated research of SNES AKAO format. <http://gnilda.rosx.net/SPC/>
 - [@brr890](https://twitter.com/brr890) and [@tssf](https://twitter.com/tssf): Contributed a lot of hints on PS1 AKAO format.
 
+Third party libraries
+------------------------
+The following third party libraries are used by VGMTrans
+- [Qt 5](https://www.qt.io/)
+- [Windows Template Library](https://wtl.sourceforge.io/)
+- [FluidSynth](https://fluidsynth.org)
+- [TinyXml](http://www.grinninglizard.com/tinyxml/)
+- [zlib](https://zlib.net/)
+
 Contact
 -------
-
 If you enjoy the software, or have any questions please contact the development team.
-
 <https://github.com/vgmtrans/vgmtrans>
