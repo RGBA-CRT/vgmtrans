@@ -47,56 +47,57 @@ public:
 	void UpdateLayout()
 	{
 		CRect rcClient;
-		GetClientRect(&rcClient);
+		this->GetClientRect(&rcClient);
 		m_package.UpdateLayout(rcClient);
 	}
 
 	void Draw(CDC& dc)
 	{
 		CRect rcClient;
-		GetClientRect(&rcClient);
+		this->GetClientRect(&rcClient);
 		m_package.Draw(dc,rcClient);
 	}
 
 	HCURSOR GetCursor(const CPoint& pt)
 	{
 		CRect rcClient;
-		GetClientRect(&rcClient);
-		HCURSOR hCursor=NULL;
-		if(rcClient.PtInRect(pt))
-			hCursor=m_package.GetCursor(pt,rcClient);
+		this->GetClientRect(&rcClient);
+		HCURSOR hCursor = nullptr;
+    if (rcClient.PtInRect(pt)) {
+      hCursor = m_package.GetCursor(pt, rcClient);
+    }
 		return hCursor;
 	}
 
 	bool StartSliding(const CPoint& pt)
 	{
 		CRect rcClient;
-		GetClientRect(&rcClient);
+		this->GetClientRect(&rcClient);
 		CDWSettings settings;
-		return m_package.StartSliding(m_hWnd,pt,rcClient,settings.GhostDrag());
+		return m_package.StartSliding(this->m_hWnd,pt,rcClient,settings.GhostDrag());
 	}
 
 	LRESULT AcceptDock(DFDOCKRECT* pHdr)
 	{
 		assert(::IsWindow(pHdr->hdr.hWnd));
-		assert(pHdr->hdr.hBar==m_hWnd);
+		assert(pHdr->hdr.hBar==this->m_hWnd);
 
 		LRESULT lRes=FALSE;
 		CRect rcClient;
-		GetClientRect(&rcClient);
+		this->GetClientRect(&rcClient);
 
-		ScreenToClient(&(pHdr->rect));
+		this->ScreenToClient(&(pHdr->rect));
 		lRes=m_package.AcceptDock(pHdr,rcClient);
 		if(!lRes)
 			pHdr->hdr.hBar=HNONDOCKBAR;
-		ClientToScreen(&(pHdr->rect));
+    this->ClientToScreen(&(pHdr->rect));
 		return lRes;
 	}
 	LRESULT GetDockingPosition(DFDOCKPOS* pHdr) const
 	{
 		LRESULT lRes=FALSE;
 		CRect rcClient;
-		GetClientRect(&rcClient);
+		this->GetClientRect(&rcClient);
 		lRes=m_package.GetDockingPosition(pHdr,rcClient);
 		return lRes;
 	}
@@ -104,7 +105,7 @@ public:
 	{
 		LRESULT lRes=FALSE;
 		CRect rcClient;
-		GetClientRect(&rcClient);
+		GetClientRect(this->m_hWnd, &rcClient);
 		lRes=m_package.SetDockingPosition(pHdr,rcClient);
 		return lRes;
 	}
@@ -112,22 +113,22 @@ public:
 	{
 		LRESULT lRes=FALSE;
 		CRect rcClient;
-		GetClientRect(&rcClient);
-		ScreenToClient(&(pHdr->rect));
+    this->GetClientRect(&rcClient);
+    this->ScreenToClient(&(pHdr->rect));
 		lRes=m_package.Dock(pHdr,rcClient);
-		ClientToScreen(&(pHdr->rect));
+    this->ClientToScreen(&(pHdr->rect));
 		return lRes;
 	}
 	LRESULT Undock(DFMHDR* pHdr)
 	{
 		CRect rcClient;
-		GetClientRect(&rcClient);
+    this->GetClientRect(&rcClient);
 		return m_package.Undock(pHdr,rcClient);
 	}
 	LRESULT Replace(DFDOCKREPLACE* pHdr)
 	{
 		CRect rcClient;
-		GetClientRect(&rcClient);
+    this->GetClientRect(&rcClient);
 		return m_package.Replace(pHdr,rcClient);
 	}
 
@@ -259,17 +260,18 @@ protected:
 	struct CPackageWindowT : CPackageWindowImpl<CPackageWindowT<TTraits>, CWndFramesPackage<TTraits> >
 	{
 	public:
-		DECLARE_WND_CLASS_EX(_T("CPackageWindowFrame::CPackageWindow"), CS_DBLCLKS, COLOR_WINDOW)
+    using CPackageWindow =  CPackageWindowT<CTraits>;
+    DECLARE_WND_CLASS_EX2(_T("CPackageWindowFrame::CPackageWindow"), CPackageWindow, CS_DBLCLKS,
+                                    COLOR_WINDOW)
         virtual void OnFinalMessage(HWND /*hWnd*/)
         {
             delete this;
         }
 	};
-	typedef CPackageWindowT<CTraits> CPackageWindow;
 public:
 	CPackageWindowFrame()
 	{
-		m_pImpl=new CPackageWindow;
+		m_pImpl=new typename CPackageWindowT<TTraits>::CPackageWindow;
 	}
 	virtual  HWND hwnd() const
 	{
@@ -314,7 +316,7 @@ public:
 		return ptr;
 	}
 protected:
-	CPackageWindow* m_pImpl;
+  typename CPackageWindowT<TTraits>::CPackageWindow* m_pImpl;
 };
 
 }//namespace dockwins

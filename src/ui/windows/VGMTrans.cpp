@@ -9,7 +9,6 @@
 
 #include "aboutdlg.h"
 #include "MainFrm.h"
-#include "MediaThread.h"
 #include "Root.h"
 
 CAppModule _Module;
@@ -39,10 +38,6 @@ int Run(LPTSTR lpstrCmdLine, int nCmdShow = SW_SHOWDEFAULT)
 
 	pMainFrame = &wndMain;
 
-//	wndMain.ShowWindow(nCmdShow);
-	mediaThread.Init();
-	//mediaThread.Run();
-
 	for (int argi = 1; argi < argc; argi++)
 	{
 		pRoot->OpenRawFile(argv[argi]);
@@ -50,7 +45,6 @@ int Run(LPTSTR lpstrCmdLine, int nCmdShow = SW_SHOWDEFAULT)
 
 	int nRet = theLoop.Run();
 
-	//mediaThread.Terminate();
 	_Module.RemoveMessageLoop();
 
 	LocalFree((HLOCAL)argv);

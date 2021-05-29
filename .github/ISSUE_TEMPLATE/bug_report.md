@@ -1,9 +1,11 @@
 ---
 name: Bug report
-about: Report a problem with the application
+about: Report a problem with the application. Do not use for support, use GitHub Discussions instead.
 labels: 
 
 ---
+
+<!-- FILL IN AS-IS, ISSUES NOT FOLLOWING THIS FORMAT ARE CONSIDERED INVALID -->
 
 **Describe the bug**
 A clear and concise description of what the bug is.

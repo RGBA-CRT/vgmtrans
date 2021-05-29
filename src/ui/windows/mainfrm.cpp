@@ -172,9 +172,6 @@ LRESULT CMainFrame::OnCreate(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/
 	pLoop->AddMessageFilter(this);
 	pLoop->AddIdleHandler(this);
 
-	if (!musicplayer.Init(m_hWnd))
-		PostQuitMessage(1);
-
 
 	FileFrameVis = false;
 

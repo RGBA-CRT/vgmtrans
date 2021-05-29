@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
@@ -8,6 +12,10 @@
     <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
       <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
@@ -38,6 +46,13 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfAtl>Static</UseOfAtl>
@@ -45,6 +60,12 @@
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfAtl>Static</UseOfAtl>
     <CharacterSet>Unicode</CharacterSet>
@@ -59,10 +80,16 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
@@ -70,45 +97,46 @@
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
-    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
-    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
-    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
-    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(ProjectDir)lib\zlib\include;$(ProjectDir)src\ui\windows;$(IncludePath)</IncludePath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(ProjectDir)lib\zlib\include;$(IncludePath)</IncludePath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)lib\dxAug07\lib\x86;$(ProjectDir)lib\tinyxml\lib\win32;$(ProjectDir)lib\zlib\lib\win32;$(LibraryPath)</LibraryPath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)lib\dxAug07\lib\x64;$(ProjectDir)lib\tinyxml\lib\x64;$(ProjectDir)lib\zlib\lib\x64;$(LibraryPath)</LibraryPath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(ProjectDir)lib\zlib\include;$(IncludePath)</IncludePath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(ProjectDir)lib\zlib\include;$(IncludePath)</IncludePath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)lib\dxAug07\lib\x86;$(ProjectDir)lib\tinyxml\lib\win32;$(ProjectDir)lib\zlib\lib\win32;$(LibraryPath)</LibraryPath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)lib\dxAug07\lib\x64;$(ProjectDir)lib\tinyxml\lib\x64;$(ProjectDir)lib\zlib\lib\x64;$(LibraryPath)</LibraryPath>
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" />
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x86;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(ProjectDir)src\ui\windows;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x64;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-arm64;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir);$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir);$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">$(OutDir);$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-arm64;$(ProjectDir)lib\tinyxml\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x86;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\dxAug07\include;$(ProjectDir)lib\wtl;$(ProjectDir)\fluidsynth\include;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-x64;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">$(ProjectDir)lib\gsl-lite;$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-arm64;$(ProjectDir)lib\zlib\minizip;$(ProjectDir)lib\zlib;$(ProjectDir)lib\wtl;$(ProjectDir)lib\tinyxml;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir);$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir);$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">$(OutDir);$(ProjectDir)lib\vgmtrans-ext-win\solidsynth-msvc2019-arm64;$(ProjectDir)lib\tinyxml\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)$(Configuration)_WTL\</OutDir>
-    <IntDir>$(Configuration)_WTL\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)_WTL\</OutDir>
-    <IntDir>$(Platform)\$(Configuration)_WTL\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)_WTL\</OutDir>
-    <IntDir>$(Platform)\$(Configuration)_WTL\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)$(Configuration)_WTL\</OutDir>
-    <IntDir>$(Configuration)_WTL\</IntDir>
-  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -119,8 +147,8 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;UNICODE;STRICT;ZLIB_WINAPI;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./src/common;./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NOMINMAX;_DEBUG;_WINDOWS;UNICODE;STRICT;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -128,11 +156,13 @@
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
-      <ExceptionHandling>Async</ExceptionHandling>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/Zc:strictStrings- %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile />
     <Link>
-      <AdditionalDependencies>zlibstat.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mtd.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>VGMTransCommon.lib;tinyxml.lib;zlib.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <DataExecutionPrevention>
@@ -149,18 +179,52 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;UNICODE;STRICT;ZLIB_WINAPI;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./src/common;./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NOMINMAX;_DEBUG;_WINDOWS;UNICODE;STRICT;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/Zc:strictStrings- %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile />
     <Link>
-      <AdditionalDependencies>zlibstat.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mtd.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>VGMTransCommon.lib;tinyxml.lib;zlib.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+    <Manifest />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TypeLibraryName>.\Debug/DockingDemo.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./src/common;./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NOMINMAX;_DEBUG;_WINDOWS;UNICODE;STRICT;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/Zc:strictStrings- %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile />
+    <Link>
+      <AdditionalDependencies>VGMTransCommon.lib;tinyxml.lib;zlib.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <DataExecutionPrevention>
@@ -178,8 +242,8 @@
     </Midl>
     <ClCompile>
       <Optimization>Full</Optimization>
-      <AdditionalIncludeDirectories>./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;UNICODE;STRICT;ZLIB_WINAPI;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./src/common;./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NOMINMAX;NDEBUG;_WINDOWS;UNICODE;STRICT;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -188,11 +252,13 @@
       </DisableSpecificWarnings>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <ExceptionHandling>Async</ExceptionHandling>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/Zc:strictStrings- %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile />
     <Link>
-      <AdditionalDependencies>zlibstat.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mt.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>VGMTransCommon.lib;tinyxml.lib;zlib.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -212,8 +278,8 @@
     </Midl>
     <ClCompile>
       <Optimization>Full</Optimization>
-      <AdditionalIncludeDirectories>./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;UNICODE;STRICT;ZLIB_WINAPI;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./src/common;./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NOMINMAX;NDEBUG;_WINDOWS;UNICODE;STRICT;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -222,10 +288,49 @@
       </DisableSpecificWarnings>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/Zc:strictStrings- %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile />
     <Link>
-      <AdditionalDependencies>zlibstat.lib;Winmm.lib;dxguid.lib;dsound.lib;tinyxmlSTL-mt.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>VGMTransCommon.lib;tinyxml.lib;zlib.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <AdditionalOptions>/PDBALTPATH:%_PDB% %(AdditionalOptions)</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Manifest />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TypeLibraryName>.\Release/DockingDemo.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>./src/common;./src/main;./src/main/loaders;./src/main/formats;./src/ui/windows;./src/ui/windows/include;./src/ui/windows/include/Sergey Klimov;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NOMINMAX;NDEBUG;_WINDOWS;UNICODE;STRICT;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/Zc:strictStrings- %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile />
+    <Link>
+      <AdditionalDependencies>VGMTransCommon.lib;tinyxml.lib;zlib.lib;ShLwApi.Lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -237,7 +342,6 @@
     <Manifest />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lib\dxAug07\dxerr\dxerr.cpp" />
     <ClCompile Include="src\main\BytePattern.cpp" />
     <ClCompile Include="src\main\datetime.cpp" />
     <ClCompile Include="src\main\formats\AkaoSnesInstr.cpp" />
@@ -322,9 +426,6 @@
     <ClCompile Include="src\ui\windows\ItemTreeView.cpp" />
     <ClCompile Include="src\ui\windows\LogListView.cpp" />
     <ClCompile Include="src\ui\windows\mainfrm.cpp" />
-    <ClCompile Include="src\ui\windows\MediaThread.cpp" />
-    <ClCompile Include="src\ui\windows\MusicPlayer.cpp" />
-    <ClCompile Include="src\ui\windows\MyCoCreateInstance.cpp" />
     <ClCompile Include="src\ui\windows\osdepend.cpp" />
     <ClCompile Include="src\ui\windows\RawFileListView.cpp" />
     <ClCompile Include="src\ui\windows\RawFileTreeView.cpp" />
@@ -333,33 +434,14 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\ui\windows\VGMCollListView.cpp" />
     <ClCompile Include="src\ui\windows\VGMFileListView.cpp" />
     <ClCompile Include="src\ui\windows\VGMTrans.cpp" />
     <ClCompile Include="src\ui\windows\WinVGMRoot.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\C3DBuffer.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\C3DListener.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\C3DSegment.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CAPathPerformance.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CAudioPath.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CCollection.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CDirectMusic.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CDLSLoader.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CDMusicException.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CInputPort.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CInstrument.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CMasterClock.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CMidiPort.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\COutputPort.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CPerformance.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CPortPerformance.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CSampleInstrument.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\CSegment.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\Dmhelp.cpp" />
-    <ClCompile Include="src\ui\windows\directmidi\DSUTIL\DSUTIL.CPP" />
-    <ClCompile Include="src\ui\windows\directmidi\DSUTIL\DXUTIL.CPP" />
     <ClCompile Include="src\main\loaders\MAMELoader.cpp" />
     <ClCompile Include="src\main\loaders\PSF1Loader.cpp" />
     <ClCompile Include="src\main\loaders\PSF2Loader.cpp" />
@@ -434,6 +516,7 @@
   <ItemGroup>
     <ClInclude Include="src\main\BytePattern.h" />
     <ClInclude Include="src\main\datetime.h" />
+    <ClInclude Include="src\main\formats\AkaoFormatVersion.h" />
     <ClInclude Include="src\main\formats\AkaoSnesFormat.h" />
     <ClInclude Include="src\main\formats\AkaoSnesInstr.h" />
     <ClInclude Include="src\main\formats\AkaoSnesScanner.h" />
@@ -468,8 +551,6 @@
     <ClInclude Include="src\main\formats\HudsonSnesInstr.h" />
     <ClInclude Include="src\main\formats\HudsonSnesScanner.h" />
     <ClInclude Include="src\main\formats\HudsonSnesSeq.h" />
-    <ClInclude Include="src\main\formats\JaiSeqFormat.h" />
-    <ClInclude Include="src\main\formats\JaiSeqScanner.h" />
     <ClInclude Include="src\main\formats\KonamiPS1Format.h" />
     <ClInclude Include="src\main\formats\KonamiPS1Scanner.h" />
     <ClInclude Include="src\main\formats\KonamiPS1Seq.h" />
@@ -541,9 +622,6 @@
     <ClInclude Include="src\ui\windows\ItemTreeView.h" />
     <ClInclude Include="src\ui\windows\LogListView.h" />
     <ClInclude Include="src\ui\windows\mainfrm.h" />
-    <ClInclude Include="src\ui\windows\MediaThread.h" />
-    <ClInclude Include="src\ui\windows\MusicPlayer.h" />
-    <ClInclude Include="src\ui\windows\MyCoCreateInstance.h" />
     <ClInclude Include="src\ui\windows\MySplitter.h" />
     <ClInclude Include="src\ui\windows\RawFileListView.h" />
     <ClInclude Include="src\ui\windows\RawFileTreeView.h" />
@@ -564,12 +642,6 @@
     <ClInclude Include="src\ui\windows\include\TabbedDockingWindow.h" />
     <ClInclude Include="src\ui\windows\include\TabbedFrame.h" />
     <ClInclude Include="src\ui\windows\include\TabbedMDI.h" />
-    <ClInclude Include="src\ui\windows\directmidi\CAudioPart.h" />
-    <ClInclude Include="src\ui\windows\directmidi\CDirectBase.h" />
-    <ClInclude Include="src\ui\windows\directmidi\CDirectMidi.h" />
-    <ClInclude Include="src\ui\windows\directmidi\CMidipart.h" />
-    <ClInclude Include="src\ui\windows\directmidi\DSUTIL\DSUTIL.H" />
-    <ClInclude Include="src\ui\windows\directmidi\DSUTIL\DXUTIL.H" />
     <ClInclude Include="src\main\formats\PSXSPU.h" />
     <ClInclude Include="src\main\formats\FFTSeq.h" />
     <ClInclude Include="src\main\formats\FFTFormat.h" />
